@@ -5,9 +5,13 @@ process.stdout.write('prompt > ');
 process.stdin.on('data', (input) => {
   const cmd = input.toString().trim(); // remove the newline
   if (cmd === 'pwd') {
-    process.stdout.write(process.cwd());
+    require('./pwd');
+  } else if (cmd === 'ls') {
+
   }
 
-//  process.stdout.write('You typed: ' + cmd);
-//  process.stdout.write('\nprompt > ');
+  else {
+    process.stdout.write('You typed: ' + cmd);
+  }
+  process.stdout.write('\nprompt > ');
 });
